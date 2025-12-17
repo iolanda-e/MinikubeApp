@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 from typing import List
-from app.models.transaction_model import Transaction
+from app.schema.transaction_schema import Transaction
 
 DATA_FILE = Path(__file__).parent / "transactions.json"
 

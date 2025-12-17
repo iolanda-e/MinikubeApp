@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 
 class SummaryStats(BaseModel):
-    """Model representing summary statistics for expenses."""
+    """Schema representing summary statistics for expenses."""
     from_date: date
     to_date: date
     currency: str

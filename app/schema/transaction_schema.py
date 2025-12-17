@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 
 class Transaction(BaseModel):
-    """Model representing a financial transaction."""
+    """Schema representing a financial transaction."""
     id: int
     date: date             
     amount: float           

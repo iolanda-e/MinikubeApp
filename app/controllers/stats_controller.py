@@ -4,8 +4,8 @@ from typing import List
 from fastapi import APIRouter, Query, HTTPException
 
 from app.data.loader import get_transactions
-from app.models.transaction_model import Transaction
-from app.models.stats_model import SummaryStats
+from app.schema.transaction_schema import Transaction
+from app.schema.stats_schema import SummaryStats
 
 router = APIRouter()
 
