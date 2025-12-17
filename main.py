@@ -1,13 +1,16 @@
 from fastapi import FastAPI
+from app.routes import router as all_routes
 
-app = FastAPI()
+app = FastAPI(
+    title="Expense Stats API",
+    version="1.0.0",
+)
 
+app.include_router(all_routes)
 
-
-@app.get("/")
-def root():
-    return {"message": "API is running"}
-
+# @app.get("/health")
+# def health():
+#     return {"status": "ok"}
 
 if __name__ == "__main__":
     import uvicorn
