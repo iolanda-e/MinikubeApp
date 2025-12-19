@@ -37,3 +37,15 @@ class TopCategoriesStats(BaseModel):
     limit: int
     total_expenses: float
     items: List[TopCategoryItem]
+
+
+class DailyExpenseItem(BaseModel):
+    date: date
+    total_expenses: float
+
+
+class DailyStats(BaseModel):
+    from_date: date
+    to_date: date
+    currency: str = "RON"
+    items: List[DailyExpenseItem]
