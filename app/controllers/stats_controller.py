@@ -12,7 +12,8 @@ router = APIRouter()
 @router.get("/summary",
              response_model=SummaryStats,
              summary="Get expense summary statistics",
-             response_description="Summary statistics for the selected date range",)
+             response_description="Summary statistics for the selected date range",
+             tags=["Stats"])
 def get_summary(
     from_date: date = Query(..., alias="from"),
     to_date: date = Query(..., alias="to"),

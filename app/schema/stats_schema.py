@@ -1,6 +1,6 @@
 from datetime import date
 from pydantic import BaseModel
-from typing import Dict, Optional
+from typing import Dict, List, Optional
 
 
 class SummaryStats(BaseModel):
@@ -21,3 +21,19 @@ class CategoryStats(BaseModel):
     category: Optional[str] = None
     total_expenses: Optional[float] = None
 
+
+class TopCategoryItem(BaseModel):
+    """Schema representing a single top category item."""
+    category: str
+    total_expenses: float
+    percentage: float
+
+
+class TopCategoriesStats(BaseModel):
+    """Schema representing top categories statistics for expenses."""
+    from_date: date
+    to_date: date
+    currency: str = "RON"
+    limit: int
+    total_expenses: float
+    items: List[TopCategoryItem]

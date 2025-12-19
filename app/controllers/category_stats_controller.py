@@ -14,11 +14,13 @@ router = APIRouter()
     response_model=CategoryStats,
     summary="Get expenses by category",
     response_description="Expense totals aggregated by category or for a single category.",
+    tags=["Stats"]
 )
 def get_expenses_by_category(
     from_date: date = Query(..., alias="from"),
     to_date: date = Query(..., alias="to"),
-    category: str = Query(..., description="Category to filter by")
+    category: str = Query(..., description="Category to filter by"),
+    tags=["Stats"]
 ):
     """
     Returns expenses grouped by category for the given date range.
